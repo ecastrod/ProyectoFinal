@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Proyecto Final</string>
+
+    <!-- Navigation Drawer-->
+    <string name="navigation_drawer_title">Weather - [Select Option]</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_linear_layout_title">Linear Layout</string>
+    <string name="navigation_drawer_relative_layout_title">Relative Layout</string>
+    <string name="navigation_drawer_flexible_fragment_title">Flexible Fragment</string>
+    <string name="navigation_drawer_tab_fragment_title">Tab Fragment</string>
+
+    <!-- LinearLayoutFragment -->
+    <string name="linear_layout_fragment_title">Linear Layout Example</string>
+    <string name="linear_layout_fragment_card_1_label">Card 1</string>
+    <string name="linear_layout_fragment_card_2_label">Card 2</string>
+    <string name="linear_layout_fragment_card_3_label">Card 3</string>
+
+    <!-- RelativeLayoutFragment -->
+    <string name="relative_layout_fragment_title">Relative Layout Example</string>
+    <string name="relative_layout_fragment_text_view_center_title">Relative Layout</string>
+    <string name="relative_layout_fragment_button_1_title">Button 1</string>
+    <string name="relative_layout_fragment_button_2_title">Button 2</string>
+
+    <!-- FlexibleFragment -->
+    <string name="flexible_fragment_title">Flexible Fragment</string>
+    <string name="flexible_fragment_single_layout_title">Single Layout</string>
+    <string name="flexible_fragment_simple_toast">Simple Toast</string>
+    <string name="flexible_fragment_test_snackbar">Test SnackBar</string>
+    <string name="flexible_fragment_test_snackbar_action">Action</string>
+    <string name="flexible_fragment_action_snackbar_message">Restored</string>
+
+    <!-- TabFragment -->
+    <string name="tab_fragment_title">Tab Fragment</string>
+    <string-array name="tabs_titles_array">
+        <item>Tab 1</item>
+        <item>Tab 2</item>
+        <item>Tab 3</item>
+    </string-array>
+
+    <!-- Main Menu -->
+    <string name="main_menu_settings_action">Settings</string>
+    <string name="main_menu_share_action">Share</string>
+    <string name="main_menu_test_action_message">Overflow Menu</string>
+
+    <!-- Share Info -->
+    <string name="share_subject">Test Subject</string>
+    <string name="share_body">Body Test</string>
+
+    <!-- CONTACTS -->
+    <!-- ContactsList -->
+    <string name="contacts_list_error_loading_contacts_msg">There was an error loading your contacts.</string>
+
+    <!-- ContactDetail -->
+    <string name="contact_detail_loading_error">There was an error loading the contact info. </string>
+
+    <!-- Transitions -->
+    <string name="contact_image_transition">Image</string>
+    <string name="contact_name_transition">Name</string>
+
+    <!-- Contact Detail -->
+    <string name="contact_detail_name_label">Name</string>
+    <string name="contact_detail_email_label">Email</string>
+    <string name="contact_detail_telephone_label">Telephone</string>
+
+</resources>
