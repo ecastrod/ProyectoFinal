@@ -4,12 +4,14 @@ package com.example.estebancastro.proyectofinal.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import io.realm.RealmObject;
+
 
 /**
  * Created by ESTEBAN CASTRO on 5/12/2016.
  */
 
-public class City implements Parcelable{
+public class City extends RealmObject implements Parcelable{
 
     public static class Fields{
         public static final String ID = "id";
