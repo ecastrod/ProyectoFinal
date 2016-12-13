@@ -18,16 +18,24 @@ public class CityDAO {
         mRealm = realm;
     }
 
-    public void saveContactsList(final ArrayList<City> contactsList){
+    public void saveCitiesList(final ArrayList<City> citiesList){
         mRealm.executeTransactionAsync(new Realm.Transaction(){
             @Override
             public void execute(Realm realm) {
-                for(City contact : contactsList){
-                    City realmContact = realm.createObject(City.class);
-                    realmContact.setId(contact.getId());
-                    realmContact.setName(contact.getName());
-                    realmContact.setEmail(contact.getEmail());
-                    realmContact.setTelephone(contact.getTelephone());
+                for(City city : citiesList){
+                    //Por WS
+                    //City realmCity = realm.createObject(City.class);
+                    //realmCity.setId(city.getId());
+                    //realmCity.setName(city.getName());
+                    //realmCity.setEmail(city.getEmail());
+                    //realmCity.setTelephone(city.getTelephone());
+
+                    City realmCity = realm.createObject(null);
+                    realmCity.setId(city.getId());
+                    realmCity.setName(city.getName());
+                    //realmCity.setEmail("EC");
+                    //realmCity.setTelephone(city.getTelephone());
+
                 }
             }
         }, new Realm.Transaction.OnSuccess(){
@@ -44,12 +52,15 @@ public class CityDAO {
     }
 
     public ArrayList<City> getContactsList(){
-        ArrayList<City> citiesList = new ArrayList<>(mRealm.where(City.class).findAll());
+        //Por WS
+        //ArrayList<City> citiesList = new ArrayList<>(mRealm.where(City.class).findAll());
+        ArrayList<City> citiesList = new ArrayList<>();
         return citiesList;
     }
 
-    public boolean areContactsAvailable(){
-        return mRealm.where(City.class).count() > 0;
+    public boolean areCitiesAvailable(){
+        //return mRealm.where(City.class).count() > 0;
+        return true;
     }
 
 }

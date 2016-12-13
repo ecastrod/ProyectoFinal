@@ -4,26 +4,27 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.example.estebancastro.proyectofinal.R;
 import com.example.estebancastro.proyectofinal.appmodules.AboutLayoutFragment;
-import com.example.estebancastro.proyectofinal.appmodules.CitiesLayoutFragment;
+import com.example.estebancastro.proyectofinal.appmodules.citieslist.view.CitiesActivity;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Realm.init(this);
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(realmConfiguration);
+
         setContentView(R.layout.activity_main);
 
         initToolbar();
@@ -106,8 +112,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         updateToolbarTitle("Cities");
         //Fragment factorialFragment = FactorialLayoutFragment.newInstance();
         //changeFragment(factorialFragment);
-        genericFragment = CitiesLayoutFragment.newInstance();
-        changeFragment(genericFragment);
+        //genericFragment = CitiesLayoutFragment.newInstance();
+        //changeFragment(genericFragment);
+
+        // Aqui vamos a instanciar otro activity.
+
+
+        Intent intent = new Intent(MainActivity.this, CitiesActivity.class);
+        //intent.putExtra(CONTACT_ID_KEY, contact);
+        //Pair<View, String> imageViewContactPair = Pair.create((View)contactImageView, getString(R.string.contact_image_transition));
+        //Pair<View, String> textViewContactNamePair = Pair.create((View)contactNameTextView, getString(R.string.contact_name_transition));
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(MainActivity.this);
+        startActivity(intent, options.toBundle());
+
+
     }
 
     private void showAboutLayoutFragment() {
@@ -123,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mTextViewToolbarTitle.setText(toolbarTitle);
     }
 
+    //Cambiar este metodo por algo para instanciar otro activity.
     private void changeFragment(Fragment newFragment) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

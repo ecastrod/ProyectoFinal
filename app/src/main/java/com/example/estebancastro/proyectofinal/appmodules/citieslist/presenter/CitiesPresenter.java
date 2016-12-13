@@ -8,7 +8,6 @@ import com.example.estebancastro.proyectofinal.appmodules.citieslist.interactor.
 import com.example.estebancastro.proyectofinal.appmodules.citieslist.interactor.LoadCitiesInteractor;
 import com.example.estebancastro.proyectofinal.model.City;
 
-
 import java.util.ArrayList;
 
 /**
@@ -22,7 +21,9 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
     private LoadCitiesInteractor mLoadCitiesInteractor;
     private GenerateCitiesInteractor mGenerateCitiesInteractor;
 
-    public void CitiesContract(Context context, CitiesContract.View citiesView,
+
+
+    public CitiesPresenter(Context context, CitiesContract.View citiesView,
                              LoadCitiesInteractor loadCitiesInteractor,
                              GenerateCitiesInteractor generateCitiesInteractor){
         mContext = context;

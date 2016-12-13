@@ -12,7 +12,7 @@
         android:background="@drawable/ic_contact"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/contact_row_image_margin_left"
-        android:id="@+id/image_view_contact" />
+        android:id="@+id/image_view_city" />
 
     <TextView
         android:transitionName="@string/contact_name_transition"
@@ -21,8 +21,8 @@
         android:text="Carlos Lopez"
         android:layout_marginLeft="@dimen/contact_row_name_margin_left"
         android:textSize="@dimen/contact_row_name_text_size"
-        android:id="@+id/text_view_contact_name_value"
+        android:id="@+id/text_view_city_name_value"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image_view_contact" />
+        android:layout_toEndOf="@+id/image_view_city" />
 
 </RelativeLayout>

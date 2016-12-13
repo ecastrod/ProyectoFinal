@@ -14,24 +14,25 @@ import io.realm.Realm;
 
 public class GenerateCitiesInteractor implements CitiesContract.GenerateCitiesInteractor {
 
-    private CityDAO mContactDao;
+    private CityDAO mCityDao;
 
     public GenerateCitiesInteractor(Realm realm){
-        mContactDao = new CityDAO(realm);
+        mCityDao = new CityDAO(realm);
     }
 
     @Override
     public void generateCitiesInDatabase() {
-        if(!mContactDao.areContactsAvailable())
-            mContactDao.saveContactsList(generateRandomCitiesList());
+        if(!mCityDao.areCitiesAvailable())
+            mCityDao.saveCitiesList(generateRandomCitiesList());
     }
 
     private ArrayList<City> generateRandomCitiesList(){
         ArrayList<City> citiesList = new ArrayList<>();
 
         for(int counter = 0; counter < 10; counter++){
-            City city = new City(counter, "Name " + counter, "City234-234", "name" + counter + "City@gmail.com");
-            citiesList.add(city);
+            //Por WS
+            //City city = new City(counter, "Name City " + counter, "San Jose", "Id " + counter);
+            //citiesList.add(city);
         }
 
         return citiesList;
