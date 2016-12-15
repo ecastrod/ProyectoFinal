@@ -13,6 +13,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class City implements Parcelable {
 
+
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -41,9 +42,22 @@ public class City implements Parcelable {
     @Expose
     private java.util.List<Weather> weather = null;
 
+    //Variables para clima.
+    private String coordStr;
+    private String temperatureStr;
+    private String humidityStr;
+    private String windStr;
+
+
     public static class Fields{
         public static final String ID = "id";
         public static final String NAME = "name";
+
+        public static final String COORDSTR = "coordStr";
+        public static final String TEMPERATURESTR = "temperatureStr";
+        public static final String HUMIDITYSTR = "humidityStr";
+        public static final String WINDSTR = "windStr";
+
     }
 
 
@@ -209,13 +223,32 @@ public class City implements Parcelable {
         this.weather = weather;
     }
 
+    public String getCoordStr() {
+        return coord.toString();
+    }
+    public void setCoordStr(String coordStr) {
+        this.coordStr = coordStr;
+    }
+
+    public String getTemperatureStr() {
+        return temperatureStr.toString();
+    }
+    public void setTemperatureStr(String temperatureStr) {
+        this.temperatureStr = temperatureStr;
+    }
+
+
 
     // Para Realm
 
-    protected City(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
-    }
+    //protected City(Parcel in) {
+    //    id = in.readInt();
+    //    name = in.readString();
+    //    coordStr = in.readString();
+    //    temperatureStr = in.readString();
+    //    humidityStr = in.readString();
+    //    windStr = in.readString();
+    //}
 
     public static final Creator<City> CREATOR = new Creator<City>() {
         @Override
@@ -229,6 +262,25 @@ public class City implements Parcelable {
         }
     };
 
+    //@Override
+    //public int describeContents() {
+    //    return 0;
+    //}
+
+    //@Override
+    //public void writeToParcel(Parcel parcel, int i) {
+    //    parcel.writeInt(id);
+    //    parcel.writeString(name);
+
+    //    parcel.writeString(coordStr);
+    //    parcel.writeString(temperatureStr);
+    //    parcel.writeString(humidityStr);
+    //    parcel.writeString(windStr);
+
+        //parcel.writeString(telephone);
+        //parcel.writeString(email);
+    //}
+
     @Override
     public int describeContents() {
         return 0;
@@ -238,8 +290,23 @@ public class City implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(id);
         parcel.writeString(name);
-        //parcel.writeString(telephone);
-        //parcel.writeString(email);
+        parcel.writeParcelable(coord, i);
+        parcel.writeParcelable(main, i);
+        parcel.writeInt(dt);
+        parcel.writeParcelable(wind, i);
+        parcel.writeParcelable(sys, i);
+        parcel.writeParcelable(clouds, i);
+    }
+
+    protected City(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        coord = in.readParcelable(Coord.class.getClassLoader());
+        main = in.readParcelable(Main.class.getClassLoader());
+        dt = in.readInt();
+        wind = in.readParcelable(Wind.class.getClassLoader());
+        sys = in.readParcelable(Sys.class.getClassLoader());
+        clouds = in.readParcelable(Clouds.class.getClassLoader());
     }
 
 }

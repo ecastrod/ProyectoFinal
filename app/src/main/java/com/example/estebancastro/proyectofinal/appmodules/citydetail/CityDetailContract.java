@@ -9,7 +9,7 @@ import com.example.estebancastro.proyectofinal.model.City;
 public interface CityDetailContract {
 
     interface View{
-        void showCityInfo(String name, String email, String telephone);
+        void showCityInfo(String name, String description, String temperature, String humedity, String wind);
     }
 
     interface Presenter{

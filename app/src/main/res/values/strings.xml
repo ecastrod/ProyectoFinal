@@ -58,10 +58,12 @@
     <string name="contact_image_transition">Image</string>
     <string name="contact_name_transition">Name</string>
 
-    <!-- Contact Detail -->
-    <string name="contact_detail_name_label">Name</string>
-    <string name="contact_detail_email_label">Email</string>
-    <string name="contact_detail_telephone_label">Telephone</string>
+    <!-- City Detail -->
+    <string name="city_detail_name_label">City Name</string>
+    <string name="city_detail_description_label">Description</string>
+    <string name="city_detail_temperature_label">Temperature</string>
+    <string name="city_detail_humedity_label">Humedity</string>
+    <string name="city_detail_wind_label">Wind</string>
 
     <!-- Para Web Service -->
     <string name="error_getting_data">Error getting weather data...</string>
@@ -70,5 +72,11 @@
     <string name="temperature">Temperature</string>
     <string name="wind_speed">Wind Speed</string>
     <string name="conditions">Conditions</string>
+
+    <!-- City Detail -->
+    <string name="about_detail_title_label">About - Weather</string>
+    <string name="about_detail_description_label">This is an application to get de near weather from San Jose Cities. You neet to select an City from List.</string>
+
+
 
 </resources>

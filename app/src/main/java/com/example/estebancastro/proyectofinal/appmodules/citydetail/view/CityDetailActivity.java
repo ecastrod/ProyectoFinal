@@ -17,8 +17,10 @@ public class CityDetailActivity extends AppCompatActivity implements CityDetailC
 
     @BindView(R.id.text_view_city_name_value)
     TextView mTextViewName;
-    @BindView(R.id.text_view_city_email_value) TextView mTextViewEmail;
-    @BindView(R.id.text_view_city_telephone_value) TextView mTextViewTelephone;
+    @BindView(R.id.text_view_city_description_value) TextView mTextViewDescription;
+    @BindView(R.id.text_view_city_temperature_value) TextView mTextViewTemperature;
+    @BindView(R.id.text_view_city_humedity_value) TextView mTextViewHumedity;
+    @BindView(R.id.text_view_city_wind_value) TextView mTextViewWind;
     private CityDetailPresenter mCityDetailPresenter;
 
     @Override
@@ -40,10 +42,15 @@ public class CityDetailActivity extends AppCompatActivity implements CityDetailC
     }
 
     @Override
-    public void showCityInfo(String name, String email, String telephone) {
+    public void showCityInfo(String name, String description, String temperature, String humedity, String wind) {
         mTextViewName.setText(name);
-        mTextViewEmail.setText(email);
-        mTextViewTelephone.setText(telephone);
+        mTextViewDescription.setText(description);
+        mTextViewTemperature.setText(temperature);
+        mTextViewHumedity.setText(humedity);
+        mTextViewWind.setText(wind);
+
+        //mTextViewEmail.setText(email);
+        //mTextViewTelephone.setText(telephone);
     }
 
     @Override

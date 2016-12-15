@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/text_view_name_title"
-        android:text="@string/contact_detail_name_label"
+        android:text="@string/city_detail_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/contact_detail_labels_text_size"
@@ -46,8 +46,8 @@
         android:layout_marginLeft="@dimen/contact_detail_info_labels_margin_left"/>
 
     <TextView
-        android:id="@+id/text_view_email_title"
-        android:text="@string/contact_detail_email_label"
+        android:id="@+id/text_view_description_title"
+        android:text="@string/city_detail_description_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/contact_detail_labels_text_size"
@@ -62,8 +62,8 @@
     </View>
 
     <TextView
-        android:id="@+id/text_view_city_email_value"
-        android:text="carlos@gmail.com"
+        android:id="@+id/text_view_city_description_value"
+        android:text="Description Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/contact_detail_info_labels_margin_left"
@@ -71,7 +71,32 @@
         android:textSize="@dimen/contact_detail_labels_text_size"/>
 
     <TextView
-        android:text="@string/contact_detail_telephone_label"
+        android:text="@string/city_detail_temperature_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/contact_detail_labels_text_size"
+        android:textStyle="bold"/>
+
+    <View
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/contact_detail_divider_height"
+        android:background="@color/divider_color"
+        android:layout_marginBottom="@dimen/contact_detail_divider_margin_bottom">
+    </View>
+
+    <TextView
+        android:id="@+id/text_view_city_temperature_value"
+        android:text="Temperature Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/contact_detail_labels_text_size"
+        android:layout_marginLeft="@dimen/contact_detail_info_labels_margin_left"/>
+
+
+    <TextView
+        android:id="@+id/city_detail_humedity_label"
+        android:text="@string/city_detail_humedity_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/contact_detail_labels_text_size"
@@ -87,11 +112,38 @@
 
 
     <TextView
-        android:id="@+id/text_view_city_telephone_value"
-        android:text="234-234"
+        android:id="@+id/text_view_city_humedity_value"
+        android:text="Humedad Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/contact_detail_labels_text_size"
         android:layout_marginLeft="@dimen/contact_detail_info_labels_margin_left"/>
+
+
+    <TextView
+        android:text="@string/city_detail_wind_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/contact_detail_labels_text_size"
+        android:textStyle="bold"/>
+
+    <View
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/contact_detail_divider_height"
+        android:background="@color/divider_color"
+        android:layout_marginBottom="@dimen/contact_detail_divider_margin_bottom">
+    </View>
+
+
+    <TextView
+        android:id="@+id/text_view_city_wind_value"
+        android:text="Wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/contact_detail_labels_text_size"
+        android:layout_marginLeft="@dimen/contact_detail_info_labels_margin_left"/>
+
+
 
 </LinearLayout>

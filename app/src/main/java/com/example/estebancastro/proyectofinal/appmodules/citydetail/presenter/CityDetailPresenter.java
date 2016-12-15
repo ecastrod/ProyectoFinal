@@ -17,7 +17,8 @@ public class CityDetailPresenter implements CityDetailContract.Presenter{
 
     @Override
     public void loadCityInfo(City city) {
-        mCityDetailView.showCityInfo(city.getName(), "contact.getEmail()", "contact.getTelephone()");
+        mCityDetailView.showCityInfo(city.getName(), city.getCoord().getLat().toString() + " " + city.getCoord().getLon().toString(), city.getMain().getTemp().toString(), city.getMain().getHumidity().toString(), city.getWind().getSpeed().toString());
+        //mCityDetailView.showCityInfo(city.getName(), "Coord VALUE", "Temperature VALUE", "Humedity VALUE", "Wind VALUIE");
     }
 
 }
