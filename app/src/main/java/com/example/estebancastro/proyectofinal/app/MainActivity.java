@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.estebancastro.proyectofinal.R;
 import com.example.estebancastro.proyectofinal.appmodules.AboutLayoutFragment;
@@ -159,6 +160,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.action_share:
                 shareInfo();
                 break;
+            case R.id.action_settings:
+                 Toast.makeText(this, "TOAST: SETTINGS. Create by Esteban Castro.", Toast.LENGTH_SHORT).show();
 
         }
         return super.onOptionsItemSelected(item);
@@ -166,33 +169,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void shareInfo() {
 
-        /*
-        Intent shareIntent = new Intent();
-        shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
-        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_body));
-        shareIntent.setType("text/plain");
-
-        if (shareIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(shareIntent);
-        }
-        */
-
-
-
         String strBodyResult = "";
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
 
-        if (iCodFragment == 1)
-        {
-            //strBodyResult = "El resultado del factorial es: ";
-            //strBodyResult = "El resultado del factorial es: " + Long.toString(((FactorialLayoutFragment)genericFragment).lResult);
-        }
-        else {
-            //strBodyResult = "El resultado del fibonacci es: ";
-            //strBodyResult = "El resultado del fibonacci es: " + Long.toString(((FibonacciLayoutFragment)genericFragment).lResult);
-        }
+        strBodyResult = "Esto es una prueba de compartir informacion.";
 
         shareIntent.putExtra(Intent.EXTRA_SUBJECT,"ENVIO RESULTADO" );
         shareIntent.putExtra(Intent.EXTRA_TEXT, strBodyResult.toString());
